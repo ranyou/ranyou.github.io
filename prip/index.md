@@ -2,7 +2,7 @@
 
 15-618 Parallel Computer Architecture and Programming - Final Project
 
-Wei Chen (wc3@andrew.cmu.edu), Ran You (rany2@andrew.cmu.edu)
+Wei Chen ([wc3@andrew.cmu.edu](wc3@andrew.cmu.edu)), Ran You ([rany2@andrew.cmu.edu](rany2@andrew.cmu.edu))
 
 
 
@@ -29,9 +29,9 @@ We are going to implement an optimized Camera Raw image processing Pipeline usin
 
 The main idea is to convert the RAW image on the left to a color image on the right. 
 
-![image_before](./figures/image_before.png)![image_after](./figures/image_after.png)
+<img src="./figures/image_before.png" width="400px" /><img src="./figures/image_after.png" width="400px" />
 
-Source: CMU 18793 Image and Video Processing lecture 2 slides
+*Source: CMU 18793 Image and Video Processing lecture 2 slides*
 
 
 
@@ -41,7 +41,7 @@ Even though a lot of image processing can be done with ISP chips, camera technol
 
 ![pipeline](./figures/pipeline.png)
 
-Source: Goss Imaging Technology online cource
+*Source: Goss Imaging Technology online cource*
 
 The entire ISP processing pipeline involves many modules. Including real-time control of exposure and white balance control, as well as image signal processing of different stages of every image. Obviously, image processing tasks need to process a large number of pixels, and the use of parallel can greatly speed up the entire pipeline.
 
@@ -72,10 +72,12 @@ Note: Tasks in dashed-line boxes are optional depending on project progress.
 
 ### Schedule
 
-Week 1: Use python and other resources to understand whole RAW image processing algorithm pipeline
-Week 2: Baseline sequential algorithm pipeline for Raw image signal processing
-Week 3: Parallelization first part of algorithm in the pipeline ( need to figure to do which part)
-Week 4: Parallelization the rest part of algorithm of the pipeline 
-Week 5: Combine all parallelized algorithm together
-Week 6: Performance analysis and report
+| Week | Tasks                                                        |
+| ---- | ------------------------------------------------------------ |
+| 1    | Use python and other resources to understand whole RAW image processing algorithm pipeline |
+| 2    | Baseline sequential algorithm pipeline for Raw image signal processing |
+| 3    | Parallelization first part of algorithm in the pipeline      |
+| 4    | Parallelization the rest part of algorithm of the pipeline   |
+| 5    | Combine all parallelized algorithm together                  |
+| 6    | Performance analysis and report                              |
 
