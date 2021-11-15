@@ -1,7 +1,3 @@
-# Parallel Chess with Multiverse Time Travel
-
-15-618 Parallel Computer Architecture and Programming - Final Project
-
 Wei Chen ([wc3@andrew.cmu.edu](wc3@andrew.cmu.edu)), Ran You ([rany2@andrew.cmu.edu](rany2@andrew.cmu.edu))
 
 
