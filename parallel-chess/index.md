@@ -112,7 +112,7 @@ We will be using the GHC machines for development, testing, and experiments. We 
 
 ## Resources
 
-* (5D Chess with Multiverse Time Travel)[https://www.5dchesswithmultiversetimetravel.com/]
-* (Wikipedia: 5D Chess with Multiverse Time Travel)[https://en.wikipedia.org/wiki/5D_Chess_with_Multiverse_Time_Travel]
-* (Wikipedia: Minimax algorithm)[https://en.wikipedia.org/wiki/Minimax]
+* [5D Chess with Multiverse Time Travel](https://www.5dchesswithmultiversetimetravel.com/)
+* [Wikipedia: 5D Chess with Multiverse Time Travel](https://en.wikipedia.org/wiki/5D_Chess_with_Multiverse_Time_Travel)
+* [Wikipedia: Minimax algorithm](https://en.wikipedia.org/wiki/Minimax)
 
