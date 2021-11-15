@@ -20,8 +20,8 @@ We will implement a parallel solver of the Chess with the Multiverse Time Travel
 [Resources](#resources)
 
 [Goals and Deliverables](#goals-and-deliverables)
-    - [Plan to achieve](#plan-to-achieve)
-    - [Hope to achieve](#hope-to-achieve)
+- [Plan to achieve](#plan-to-achieve)
+- [Hope to achieve](#hope-to-achieve)
 
 [Platform](#platform)
 
@@ -34,15 +34,15 @@ We will implement a parallel solver of the Chess with the Multiverse Time Travel
 
 [Chess with Multiverse Time Travel](https://store.steampowered.com/app/1349230/5D_Chess_With_Multiverse_Time_Travel/) is a chess game that allows pieces to travel back in time and travel through timelines. In this game, chess pieces can travel to the past, upon which a new timeline (or chess board) will be created exactly as it was at that point in time with the travelled piece added to it. In addition, chess pieces can also travel between timelines. At each turn, players must play a move on all of the active boards. And the game ends when checkmate happens on any chess board.
 
-<img src="https://steamuserimages-a.akamaihd.net/ugc/1499090116262162524/E00E247BD77D0BCAA7677FFCB1E6CBCC8310912B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="400px" />
+<img src="https://steamuserimages-a.akamaihd.net/ugc/1499090116262162524/E00E247BD77D0BCAA7677FFCB1E6CBCC8310912B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="500px" />
 
 *Source: https://steamcommunity.com/sharedfiles/filedetails/?id=2204910380*
 
 In the case when the entire board gets too large, we will prune the earliest created boards if there are more than 16 currently active boards in order to reduce search space as well as parallel processes. 
 
-<img src="https://steamuserimages-a.akamaihd.net/ugc/1499090116262162524/E00E247BD77D0BCAA7677FFCB1E6CBCC8310912B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="400px" />
+<img src="https://steamuserimages-a.akamaihd.net/ugc/1713031237434740981/67ACC26410AA9118659FFBA381CD8C1C7AB19C82/?imw=1920&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="500px" />
 
-*Source: https://steamcommunity.com/sharedfiles/filedetails/?id=2204910380*
+*Source: https://steamcommunity.com/app/1349230/screenshots/*
 
 This is an application largely based on an AI of the original chess game. Despite the additional communication, synchronization, and optimization across chess boards, the game proceeds in the exact same rules as normal chess. Our goal is to build a parallel program to solve the game, i.e., find a relatively good move at each step, but not to build a good parallel game interface, although the program will include both a game engine and a game solver. 
 
@@ -112,7 +112,7 @@ We will be using the GHC machines for development, testing, and experiments. We 
 
 ## Resources
 
-* https://en.wikipedia.org/wiki/5D_Chess_with_Multiverse_Time_Travel
-* https://www.5dchesswithmultiversetimetravel.com/
-* https://en.wikipedia.org/wiki/Minimax
+* (5D Chess with Multiverse Time Travel)[https://www.5dchesswithmultiversetimetravel.com/]
+* (Wikipedia: 5D Chess with Multiverse Time Travel)[https://en.wikipedia.org/wiki/5D_Chess_with_Multiverse_Time_Travel]
+* (Wikipedia: Minimax algorithm)[https://en.wikipedia.org/wiki/Minimax]
 
