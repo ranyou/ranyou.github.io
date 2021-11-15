@@ -67,8 +67,8 @@ In case this game is too hard to simulate, one fallback option is bughouse, whic
 ## Resources
 
 We plan to build our game program from scratch, although we will largely learn from available sources: 
-- Chess AI from previous students: https://github.com/ihajhasa/Parallel_Chess_AI
-- Chess in 5D (open source):  https://chessin5d.net/
+- [Chess AI from previous students](https://github.com/ihajhasa/Parallel_Chess_AI)
+- [Chess in 5D (open source)](https://chessin5d.net/)
 
 We will also learn from available sources about building chess AI, the optimization algorithms, and how to construct a reasonable utility function. 
 
@@ -99,15 +99,15 @@ We will be using the GHC machines for development, testing, and experiments. We 
 
 ## Schedule
 
-| Week | Tasks                                                        |
-| ---- | ------------------------------------------------------------ |
+| Week | Tasks |
+| ---- | ----- |
 | Week 2: 11/12 - 11/14 | Draft new proposal |
 | Week 3: 11/15 - 11/21 | Research about Chess with Multiverse Time Travel<br />Design and implement the sequential version |
 | 11/22 | Milestone Report |
 | Week 3: 11/22 - 11/28 | Parallelize the program using different parallel frameworks |
 | Week 4: 11/29 - 12/05 | Optimize the parallel implementation |
 | Week 5: 12/06 - 12/09 | Conduct experiments and analysis on the parallel program<br />Write project report and prepare for project presentation |
-| 12/09 | Project Report           |
+| 12/09 | Project Report |
 | 12/10 | Poster Session |
 
 ## Resources
