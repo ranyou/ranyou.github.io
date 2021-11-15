@@ -34,13 +34,13 @@ We will implement a parallel solver of the Chess with the Multiverse Time Travel
 
 [Chess with Multiverse Time Travel](https://store.steampowered.com/app/1349230/5D_Chess_With_Multiverse_Time_Travel/) is a chess game that allows pieces to travel back in time and travel through timelines. In this game, chess pieces can travel to the past, upon which a new timeline (or chess board) will be created exactly as it was at that point in time with the travelled piece added to it. In addition, chess pieces can also travel between timelines. At each turn, players must play a move on all of the active boards. And the game ends when checkmate happens on any chess board.
 
-<img src="https://steamuserimages-a.akamaihd.net/ugc/1499090116262162524/E00E247BD77D0BCAA7677FFCB1E6CBCC8310912B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="500px" />
+<img src="https://steamuserimages-a.akamaihd.net/ugc/1499090116262162524/E00E247BD77D0BCAA7677FFCB1E6CBCC8310912B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="600px" />
 
 *Source: https://steamcommunity.com/sharedfiles/filedetails/?id=2204910380*
 
 In the case when the entire board gets too large, we will prune the earliest created boards if there are more than 16 currently active boards in order to reduce search space as well as parallel processes. 
 
-<img src="https://steamuserimages-a.akamaihd.net/ugc/1713031237434740981/67ACC26410AA9118659FFBA381CD8C1C7AB19C82/?imw=1920&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="500px" />
+<img src="https://steamuserimages-a.akamaihd.net/ugc/1713031237434740981/67ACC26410AA9118659FFBA381CD8C1C7AB19C82/?imw=1920&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" width="600px" />
 
 *Source: https://steamcommunity.com/app/1349230/screenshots/*
 
