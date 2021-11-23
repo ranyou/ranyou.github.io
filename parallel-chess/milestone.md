@@ -15,13 +15,13 @@ Wei Chen ([wc3@andrew.cmu.edu](wc3@andrew.cmu.edu)), Ran You ([rany2@andrew.cmu.
 
 | Dates         | Tasks                                                        |
 | ------------- | ------------------------------------------------------------ |
-| 11/22 - 11/23 | Finish implementation of multiverse chess rules Test Cilk coding environment |
-| 11/24 - 11/25 | Finish implementation Minimax algorithmDefine and implement utility function |
+| 11/22 - 11/23 | Finish implementation of multiverse chess rules<br />Test Cilk coding environment |
+| 11/24 - 11/25 | Finish implementation Minimax algorithm<br />Define and implement utility function |
 | 11/26 - 11/27 | Parallelize the program in OpenMP                            |
 | 11/28 - 11/29 | Parallelize the program in MPI                               |
 | 11/30 - 12/01 | Parallelize the program in Cilk                              |
 | 12/02 - 12/05 | Optimize parallel programs                                   |
-| 12/06 - 12/08 | Conduct experiments and analysis on the parallel programWrite project report and prepare for project presentation |
+| 12/06 - 12/08 | Conduct experiments and analysis on the parallel program<br />Write project report and prepare for project presentation |
 | 12/09         | Project Report                                               |
 | 12/10         | Poster Session                                               |
 
