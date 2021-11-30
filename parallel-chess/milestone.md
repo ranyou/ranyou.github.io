@@ -43,7 +43,8 @@ Deliverables:
 
 * A simple introduction of the game (as slides)
 * A demonstration of the algorithms, including how the program is parallelized (as graphs), including which parts are parallelized, where are locks and barriers, how messages are communicated
-* A comparison of different computing frameworks (as speedup graph)Analysis of experimental results (as slides)
+* A comparison of different computing frameworks (as speedup graph)
+* Analysis of experimental results (as slides)
 
 ## 4 Issues
 We realized the rules of multiverse chess are much more complex than we expected. It has many additional infrastructure built upon the basic chess rules. We plan to simplify the problem by defining our own set of rules. We also realized that building an AI for chess itself is no simple task, which requires using good heuristics, optimization algorithms, and utility functions. We plan to build our AI based on Minimax algorithm with a simple utility function (average distance of pieces to the king of the adversarial with different weights). We will adjust this utility function after we’ve done more research as we progress. We need to set up a simple working game as fast as possible so that we can move on to parallelize the game on MPI, OpenMP, and Cilk. We need to test the Cilk environment on GHC machines. 

@@ -14,10 +14,10 @@ We will implement a parallel solver of the Chess with the Multiverse Time Travel
 
 ## Checklist
 
-- [ ] Finish implementation of multiverse chess rules
+- [X] Finish implementation of multiverse chess rules
 - [ ] Test Cilk coding environment
-- [ ] Finish implementation Minimax algorithm
-- [ ] Define and implement utility function
+- [X] Finish implementation Minimax algorithm
+- [X] Define and implement utility function
 - [ ] Parallelize the program in OpenMP
 - [ ] Parallelize the program in MPI
 - [ ] Parallelize the program in Cilk
