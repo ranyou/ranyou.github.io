@@ -191,15 +191,12 @@ In terms of message passing, load balancing is the main source of overhead. We d
 
 ## References
 
-[1] I. Wikimedia Foundation, “Alphabeta pruning,” 19 October 2021. [Online].
-Available: https://en.wikipedia.org/wiki/Alphabeta_pruning
-[2] I. Wikimedia Foundation, “minmax,” 5 October 2021. [Online].
-Available: https://en.wikipedia.org/wiki/Minimax
-[3] Singhal, Shubhendra Pal, and M. Sridevi. "Comparative study of performance of parallel Alpha Beta Pruning for different architectures." 2019 IEEE 9th International Conference on Advanced Computing (IACC). IEEE, 2019.
-[4] Strnad, Damjan, and Nikola Guid. "Parallel alpha-beta algorithm on the GPU." Journal of computing and information technology 19.4 (2011): 269-274.
-[5] Brockington, Mark Gordon. Asynchronous Parallel Garne-Tree Search. Diss. University of Alberta, 1998.
-[6] Hyatt, Robert M., Bruce W. Suter, and Harry L. Nelson. "A parallel alpha/beta tree searching algorithm." Parallel Computing 10.3 (1989): 299-308.
-[7] Project from previous students: “Chess AI” https://github.com/ihajhasa/Parallel_Chess_AI
-[8] Project from previous students: Nancy Xiao and Jemmin Chang. “Parallel Game Tree Evaluation”. 
-https://jchang504.github.io/projects/418project.html
-[9] Chess in 5D (open source):  https://chessin5d.net/
+- [1] I. Wikimedia Foundation, “Alphabeta pruning,” 19 October 2021. [Online]. Available: https://en.wikipedia.org/wiki/Alphabeta_pruning
+- [2] I. Wikimedia Foundation, “minmax,” 5 October 2021. [Online]. Available: https://en.wikipedia.org/wiki/Minimax
+- [3] Singhal, Shubhendra Pal, and M. Sridevi. "Comparative study of performance of parallel Alpha Beta Pruning for different architectures." 2019 IEEE 9th International Conference on Advanced Computing (IACC). IEEE, 2019.
+- [4] Strnad, Damjan, and Nikola Guid. "Parallel alpha-beta algorithm on the GPU." Journal of computing and information technology 19.4 (2011): 269-274.
+- [5] Brockington, Mark Gordon. Asynchronous Parallel Garne-Tree Search. Diss. University of Alberta, 1998.
+- [6] Hyatt, Robert M., Bruce W. Suter, and Harry L. Nelson. "A parallel alpha/beta tree searching algorithm." Parallel Computing 10.3 (1989): 299-308.
+- [7] Project from previous students: “Chess AI” https://github.com/ihajhasa/Parallel_Chess_AI
+- [8] Project from previous students: Nancy Xiao and Jemmin Chang. “Parallel Game Tree Evaluation”. https://jchang504.github.io/projects/418project.html
+- [9] Chess in 5D (open source):  https://chessin5d.net/
