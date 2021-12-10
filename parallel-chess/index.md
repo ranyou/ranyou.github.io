@@ -18,12 +18,12 @@ We will implement a parallel solver of the Chess with the Multiverse Time Travel
 - [ ] Test Cilk coding environment
 - [X] Finish implementation Minimax algorithm
 - [X] Define and implement utility function
-- [ ] Parallelize the program in OpenMP
-- [ ] Parallelize the program in MPI
+- [X] Parallelize the program in OpenMP
+- [X] Parallelize the program in MPI
 - [ ] Parallelize the program in Cilk
 - [ ] Optimize parallel programs
-- [ ] Conduct experiments and analysis on the parallel program
-- [ ] Write project report and prepare for project presentation
+- [X] Conduct experiments and analysis on the parallel program
+- [X] Write project report and prepare for project presentation
 
 ## Game Rules
 
