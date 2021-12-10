@@ -234,6 +234,12 @@ In terms of the exact running time of these implementations, the running time of
 
 In terms of message passing, load balancing is the main source of overhead. We directly distribute work to all available resources, and as pointed out previously, alpha-beta pruning can generate very uneven workloads across children nodes, and we did not implement more complicated methods to better balance work loads. Another main problem is synchronization and message passing, synchronization happens after each child node search, after which processes communicate data to update alpha and beta. After all boards complete searching, they synchronize again when exchanging moves information. And synchronization happens again after each timestep. Another main problem of MPI is that it's very hard to parallelize in multiple levels while maintaining good load balancing. 
 
+**Future Work:**
+
+* Better optimization in OpenMP framework.
+* Parallelize move generation and board evaluation using CUDA or SIMD.
+* Combining parallelization from different frameworks.
+
 
 ## References
 
