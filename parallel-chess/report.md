@@ -30,9 +30,15 @@ In our project, we simplified the problem by initializing 8 boards, and requirin
 
 The game evolves as follows, 8 chess boards are initialized at the beginning of the game. At each timestep, white and black each move one piece from all of the 8 boards, the move to take is found using monte carlo tree search algorithms (Minimax, or Alpha-Beta pruning). 
 
+![img](https://lh4.googleusercontent.com/r-3GfPbPnKDMWpLuOz7OgWwp_bAQFV3OzgbwYSMb1LhZmMcH3fOQ6WM6KLriqLxTNt52C9eDU4ApJVSPkeQwU4CuXzGz_uwQePEMtowYcOJlmJ9H8NMBO_x63QUv4pOu1RYiaox1)
+
 **Minimax algorithm** is often used in games and programs where two parties compete, such as chess. The algorithm is a zero-sum algorithm, that is, one player chooses the option that maximizes its advantage among the available moves, and the other player chooses the method that minimizes the opponent's advantage. The Minimax algorithm builds a search tree by simulating moves from both players and evaluate the game states at the leaves, it then simulates the way players make decisions by taking maximum and minimum interchangeably, it finally finds the best move at the root. 
 
+![img](https://lh5.googleusercontent.com/Uesxiu4g3S5p5ahpiPxUppCfA7YlEB3I1knJ0joSb6DLyWEmYNJkNT22fCKOlY4mBQA-EHNWxd6TOpgwESTsyDgD_79-qWMIeVAV39ytaphhy_F3uCseotoyHqTdyKSo0FdNVNlm)
+
 **Alpha-Beta pruning** is an optimization of the Minimax algorithm. It prunes the branches of the search tree by keeping track of upper and lower bounds of previously evaluated moves (alpha and beta). When the algorithm dictates that no better move can be found according to alpha and beta, it will stop searching that branch. This algorithm finds the same results as the Minimax algorithm, but can prune the tree very aggressively if nodes are well ordered. 
+
+![img](https://lh6.googleusercontent.com/D3IfCTKNnpWryauHOyEWbM-lMbZudEVoHDzYPD3FLwRlTMfNeKzUW4KZESn-x_XzMVGW_FvqgzjcBmL_FKb0LhU45pkdFoNseSAa_zCMZx_WybMiepZ0p8CetBpaAQzVRomVXnmB)
 
 ### Data Structures and Algorithms
 
@@ -113,6 +119,8 @@ Since there are up to 8 cores on GHC machines, and in order to separate effects 
 
 We map the problem to target machines based on our previous 3-level analysis. Specifically, we paralized level 1 (chess boards) and level 2 (Minimax algorithm, Alpha-Beta pruning) separately, and then combined them together. We did not parallelize level 3 (move generation and board evaluation). If we have more time, it’d be interesting to explore the effects of parallelization at the last level. Another interesting direction to investigate is combining different frameworks. 
 
+![img](https://lh6.googleusercontent.com/wsktUUua9vRCpW-oYco9p9x8f9zqg0yBr7oHE3858o4IaIT8OkOdxsVLiPjDAoGcpZwhZGPvr4SGp_gq1u2W2RYTZESQ3JZKL26Td28ouji-MVpgzSkjkIVGU237gZZHnWaaeSq1)
+
 ### 2.2 Parallelization
 
 #### Level 1: Parallelize Boards
@@ -130,6 +138,8 @@ All available resources (processes/threads) are first grouped into 8 groups, eac
     - After searching for the best moves, each process broadcasts the best move to all other processes. 
     - Within each process, it then updates boards according to the received best moves. 
 
+![img](https://lh6.googleusercontent.com/tRK7lMZBgjQDrj3Ag06WHUzFUhftXG41jUxFKrlOj7KElH5I8UmQ_0yzRcowwOqAV3gvNe5xoAp9IVgbdjl0LA_ZPcIk2rYPS6iZnFdCkAu76_8Eo33Zd8STjCJwlqxOyE1abtPX)
+
 #### Level 2: Parallelize Minimax algorithm/Alpha-Beta pruning
 
 We define three parameters, i.e. max_width and max_depth that controls that branching factor and depth of the search tree, and par_depth, which controls the depth of parallelization (only in OpenMP).
@@ -146,6 +156,7 @@ The deeper the parallelization depth, the more communication and memory overhead
     - Within each process, it searches for the children it is responsible for, and sends the best moves back to root. The root then aggregates the results and picks the best move. 
     - In order to leverage the advantage of pruning, as soon as a process finishes searching any one child, it broadcasts the results to all other processes, so that all processes their local values of alpha and beta according to the received the results to facilitate pruning. 
 
+![img](https://lh3.googleusercontent.com/dApoZ9l1Qz1B_1R75uOL9sqJqvMcdDNgXIIrFK-GpyAOVAfswUdt_7ETvu1nYrRVMDp5_bcZKiKh7jiQOPQV7fWnW6PV71eVc8wwzvfT0lwezIKuktYN5DdFDwxTLV-VENUwZn7z)
 
 ### 2.3 Optimizations
 
@@ -170,11 +181,46 @@ In this section, we documented some previous implementations, the optimizations 
 
 ### Experiment Setup
 
-We measured the performance of our programs by simulating 5 timesteps of chess playing on GHC machines, and recorded speedup using a different number of threads. For all our experiments, we fixed the parameters used in the Minimax algorithm and Alpha-Beta pruning. 
+We measured the performance of our programs by simulating some timesteps of chess playing on GHC machines, and recorded speedup using different number of threads. For all our experiments, we fixed the parameters used in the Minimax algorithm and Alpha-Beta pruning. 
+
+**Environent:**
+
+* Hardware: GHC machines
+* APIs: OpenMP, MPI
+
+**Parameters:**
+
+| num_steps | max_width | max_depth | par_depth |
+| --------- | --------- | --------- | --------- |
+| 5         | 16        | 5         | 0         |
+
+* Number of steps: simulate playing for several steps and average runtime
+* Max width: branching factor in the Monte Carlo search tree
+* Max depth: maximum depth of the Monte Carlo search tree
+* Parallel depth: depth in MC tree until which operations are parallelized
 
 ### Nodes Visited
 
+| Algorithm               | Minimax algorithm | Alpha-Beta pruning |
+| ----------------------- | ----------------- | ------------------ |
+| Number of nodes visited | 1118481           | 5181               |
+
+![img](https://lh4.googleusercontent.com/4tLsw0CnoY_ngAdOYXmyhMxFJjONT6fDgoiJjIPLXRYBQbOThKs7xtcyQ8sjE28PxhwVbXsVhBZuG9VUpL9mshDQ4a0GueGQkLQt3VsLwudKP2Z5ZYwytYCOuMyG2yCjv9z2m4EH)
+
 As shown by the above results, the effect of pruning is very significant by Alpha-Beta pruning. In fact, it has reduced the number of nodes visited by about 1000 times. This shows that our application is particularly applicable to the Alpha-Beta pruning algorithm. Also, the number of nodes visited in Alpha-Beta pruning in the parallel version is more than the number of nodes visited in the sequential version, this is as we expected, and we managed to reduce the overhead by communicating alpha and beta values. 
+
+### Speedup
+
+![img](https://lh6.googleusercontent.com/Fu22I1lFGlkwiPMOjH8kcrQF9bj2jLvXZv3AK9vND5P0yIdKOOo7oe9XvOyn3GGDINDzr46qcbO-ekJCEPPMqrFgIRmlCstmE1pVgwTasJJUEs5oLvxORVvO1uyLUYOqN9jnAy6a)
+
+![img](https://lh3.googleusercontent.com/YdXiwlUS1y8dbSvcSaLMLdSJsoeOqF17LzULPpqMkiW-WKdnDidWPoxwmzCEy_VpEWbJsdM8GiIBePxYOf0SqUOTH0mfJ3_N0-NCR7ptVDwKExOx8z-Irp3TvqYfpjC2PcW23pTG)
+
+**Analysis:** 
+
+* MPI is slower than OpenMP, but MPI has better speedup
+* Parallelization performance of Minimax is better alpha-beta, due to effects of pruning and communication
+* Bad speedup due to poor load balancing and synchronization, also many memory allocations and operations to prevent read/write conflicts
+* Chess boards speedup is better than single board speedup
 
 ### Minimax vs. Alpha-Beta
 
